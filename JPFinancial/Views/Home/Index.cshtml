@@ -2,30 +2,51 @@
     ViewBag.Title = "Home Page";
 }
 
+
+
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+
+    <p class="lead">
+        <img src="~/Images/JPFinancial-Logo-179x189-png.png" style="margin-right:4px; float:left" />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Investing can sometimes feel like a constant, uphill battle.  Financial decisions are unavoidable and have a great
+        effect on our lives.  J.P. Financial aims to help you along the path to financial success by teaching the basics, providing resources to
+        strengthen your financial prowess, and giving you the tools to take your investments to the next level.
+    <p>
+        <blockquote class="blockquote-reverse">
+    <p class="text-success">An investment in knowledge pays the best interest.</p>
+    <small>Benjamin Franklin</small>
+    </blockquote>
+    </p>
+    @*<button class="btn btn-default btn-md">@Html.ActionLink("About", "About", "Home")</button>*@
 </div>
+<br />
+<br />
+<p class="text-info">
+    <span class="glyphicon glyphicon-asterisk"></span>J.P. Financial is currently in alpha and not all of the features are fully functional.  We apologize for the inconvenience and are working hard to get the site up
+    and fully functional.
+</p>
+
+@*Descriptions need to all be rewritten with better descriptions!!*@
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <h2>Browse Companies</h2>
+        <p>Browse publicly traded companies to get information regarding their stocks and financial reports</p>
+        <button class="btn btn-default btn-md">@Html.ActionLink("Browse", "Index", "Companies")</button>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Practice</h2>
+        <p>Use our randomly generated financial reports to practice calculating ratios</p>
+        <button class="btn btn-default btn-md">@Html.ActionLink("Practice", "Income", "Practice")</button>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+    @*<div class="col-md-4">
+            <h2>Learn</h2>
+            <p>Resources aimed at teaching the principles of finance, no matter where you are on your journey</p>
+            <button class="btn btn-default btn-md">@Html.ActionLink("Learn", "Learn", "Learn")</button>
+        </div>*@
 </div>

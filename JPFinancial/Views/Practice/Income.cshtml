@@ -1,0 +1,403 @@
+﻿@*@model IEnumerable<JPFinancial..DailyStockInfo>*@
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<blockquote>
+    Understanding an income statement is essential for investors in order to analyze the profitability and future growth of a company,
+    which should play a huge role in deciding whether or not to invest in it.
+    <small>
+        Richard Loth&nbsp;&nbsp;<cite title="Understanding the Income Statement">
+            <a href="http://www.investopedia.com/articles/04/022504.asp?o=40186&l=dir&qsrc=999&qo=investopediaSiteSearch" target="_blank">
+                Understanding the Income Statement
+            </a>
+        </cite>
+    </small>
+</blockquote>
+
+<div class="col-md-12">
+    <div class="col-md-7">
+
+        <h2 class="text-center">Income Statement</h2>
+        <table class="table">
+            <tbody>
+                @*Sales Revenue*@
+                <tr>
+                    <td class="col-md-3"><div class="text-primary" style="text-decoration: underline">Sales Revenue</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">Sales Revenue</td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.salesRevenue</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">Less: Sales Discounts</td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-4"><div style="float: right">@ViewBag.salesDiscounts</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:4em">Sales Returns</td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-4"><div style="float: right; border-bottom-style:solid">@ViewBag.salesReturns</div></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right; border-bottom-style:solid">@ViewBag.totalDiscounts</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">Net Sales Revenue</td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.netSalesRevenue</div></td>
+                </tr>
+                <tr></tr>
+
+                @*Cost of Goods Sold*@
+                <tr>
+                    <td class="col-md-3"><div class="text-primary" style="text-decoration: underline">Cost of Goods Sold</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">Inventory, Dec. 31, Year 1</td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.beginningInventory</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">Purchases</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.purchases</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">Less: Purchases Discounts</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.purchaseDiscounts</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:4em">Purchase Returns</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.purchaseReturns</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:4em">Purchase Allowances</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float:right; border-bottom-style:solid">@ViewBag.purchaseAllowances</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">Net Purchases</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float:right">@ViewBag.netPurchases</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">Shipping Charges</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float:right; border-bottom-style:solid">@ViewBag.shippingCharges</div></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float:right; border-bottom-style:solid">@ViewBag.totalPurchases</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">Cost of Goods Available for Sale</td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float:right">@ViewBag.COGAFS</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">Less: Inventory, Dec. 31, Year 2</td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float:right; border-bottom-style:solid">@ViewBag.endingInventory</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:4em">Cost of Goods Sold</td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float:right; border-bottom-style: solid">@ViewBag.COGS</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">Gross Profit</td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.grossProfit</div></td>
+                </tr>
+
+                @*Operating Activities*@
+                <tr>
+                    <td class="col-md-3"><div class="text-primary" style="text-decoration: underline">Operating Activities</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3"><div class="text-muted">Selling Expenses</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Advertising Expense</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.advertisingExpense</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Bad Debt Expense</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.badDebtExpense</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Misc. Selling Expense</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.miscSellingExpenses</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Sales Force Salaries Expense</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.salesForceSalaries</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Selling Commissions Expense</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.sellingCommissionsExpense</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Shipping Expense</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float:right; border-bottom-style:solid">@ViewBag.shippingExpense</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3"></td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.totalOperatingExpenses</div></td>
+                </tr>
+
+                @*Administrative Expenses*@
+                <tr>
+                    <td class="col-md-3"><div class="text-muted">Administrative Expenses</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Executive Salaries Expense</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.executiveSalariesExpense</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Depreciation & Amortization Expense</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.depreciationAmortizationExpense</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Insurance Expense</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.insuranceExpense</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Misc. Admin. Expense</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.miscAdminExpense</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Office Supplies Expense</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.officeSuppliesExpense</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Rent Expense</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.rentExpense</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Utilities Expense</td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float:right; border-bottom-style:solid">@ViewBag.utilitiesExpense</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">Total Administrative Expenses</td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float:right; border-bottom-style:solid">@ViewBag.totalAdminExpenses</div></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float:right; border-bottom-style:solid">@ViewBag.totalOperatingActivityExpenses</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3">Income from Operations</td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.incomeFromOperations</div></td>
+                </tr>
+
+                @*Other Gains and Losses*@
+                <tr>
+                    <td class="col-md-3"><div class="text-primary" style="text-decoration:underline">Other Gains and Losses</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Rent Revenue</td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.rentRevenue</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Interest Expense</td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float:right; border-bottom-style: solid">@ViewBag.interestExpense</div></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float:right; border-bottom-style: solid">@ViewBag.totalGainsLosses</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Income from Continuing Operations before Taxes</td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right">@ViewBag.incomeFromContOpsBeforeTaxes</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Income Tax Expense</td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right ; border-bottom-style: solid">@ViewBag.incomeTaxExpense</div></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3" style="padding-left:2em">Net Income</td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"></td>
+                    <td class="col-md-1 col-md-offset-1"><div style="float: right; border-bottom-style: double">@ViewBag.netIncome</div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-5">
+        <div class="well well-md">
+            <h2>Practice calculating the income statement financial ratios</h2>
+            <p>
+                Below are the different financial ratios that will need to be calculated in order to evaluate the income statement and properly determine
+                the financial health of the company.
+            </p>
+        </div>
+        <div class="btn-group btn-group-justified">
+            <a href="#eps" data-toggle="collapse" class="btn btn-default" style="border:solid; border-color: #222222" id="epsBtn">EPS</a>
+            <a href="#grossProfitMargin" data-toggle="collapse" class="btn btn-default" style="border:solid; border-color: #222222" id="grossProfitMarginBtn">Gross Profit Margin</a>
+        </div>
+        <div class="btn-group btn-group-justified">
+            <a href="#operatingProfitMargin" data-toggle="collapse" class="btn btn-default" style="border:solid; border-color: #222222" id="operatingProfitMarginBtn">Operating Profit Margin</a>
+            <a href="#effectiveTaxRate" data-toggle="collapse" class="btn btn-default" style="border:solid; border-color: #222222" id="effectiveTaxRateBtn">Effective Tax Rate</a>
+        </div>
+        <div class="btn-group btn-group-justified">
+            <a href="#netProfitMargin" data-toggle="collapse" class="btn btn-default" style="border:solid; border-color: #222222" id="netProfitMarginBtn">Net Profit Margin</a>
+            <a href="#priceToEarnings" data-toggle="collapse" class="btn btn-default" style="border:solid; border-color: #222222" id="priceToEarningsBtn">Price to Earnings Ratio</a>
+        </div>
+        <div class="btn-group btn-group-justified">
+            <a href="#timesInterestEarned" data-toggle="collapse" class="btn btn-default" style="border:solid; border-color: #222222" id="timesInterestEarnedBtn">Times Interest Earned</a>
+            <a href="#dividendYield" data-toggle="collapse" class="btn btn-default" style="border:solid; border-color: #222222" id="dividendYieldBtn">Dividend Yield</a>
+        </div>
+        <br />
+        <br />
+
+        @using (Ajax.BeginForm("Answer", "Practice", new AjaxOptions
+        {
+            UpdateTargetId = "answerDiv",
+            InsertionMode = InsertionMode.ReplaceWith,
+            HttpMethod = "GET"
+        }))
+        {
+            <div id="eps" class="collapse">
+                <p>What is the company's earnings per share? (Round answers to 2 decimal places)</p>
+                <br />
+                @Html.Hidden("divId", "eps")
+                <input type="hidden" name="correctAnswer" value="@ViewBag.EPS" />
+                <p>Outstanding shares: @ViewBag.sharesOutstanding</p>
+                @Html.TextBox("answer") <br /><br />
+                <input class="btn btn-success" type="submit" value="Check Answer" />
+            </div>
+        }
+
+        @using (Ajax.BeginForm("Answer", "Practice", new AjaxOptions
+        {
+            UpdateTargetId = "answerDiv",
+            InsertionMode = InsertionMode.ReplaceWith,
+            HttpMethod = "GET"
+        }))
+        {
+            <div id="grossProfitMargin" class="collapse">
+                <p>What is the company's gross profit margin? (Round answers to 2 decimal places)</p>
+                <br />
+                @Html.Hidden("divId", "grossProfitMargin")
+                <input type="hidden" name="correctAnswer" value="@ViewBag.grossProfitMargin" />
+                @Html.TextBox("answer") <br /><br />
+                <input class="btn btn-success" type="submit" value="Check Answer" />
+            </div>
+        }
+
+        @using (Ajax.BeginForm("Answer", "Practice", new AjaxOptions
+        {
+            UpdateTargetId = "answerDiv",
+            InsertionMode = InsertionMode.ReplaceWith,
+            HttpMethod = "GET"
+        }))
+        {
+            <div id="operatingProfitMargin" class="collapse">
+                <p>What is the company's operating profit margin? (Round answers to 2 decimal places)</p>
+                <br />
+                @Html.Hidden("divId", "operatingProfitMargin")
+                <input type="hidden" name="correctAnswer" value="@ViewBag.operatingProfitMargin" />
+                @Html.TextBox("answer") <br /><br />
+                <input class="btn btn-success" type="submit" value="Check Answer" />
+            </div>
+        }
+
+        @using (Ajax.BeginForm("Answer", "Practice", new AjaxOptions
+        {
+            UpdateTargetId = "answerDiv",
+            InsertionMode = InsertionMode.ReplaceWith,
+            HttpMethod = "GET"
+        }))
+        {
+            <div id="effectiveTaxRate" class="collapse">
+                <p>What is the company's effective tax rate? (Round answers to 2 decimal places)</p>
+                <br />
+                @Html.Hidden("divId", "effectiveTaxRate")
+                <input type="hidden" name="correctAnswer" value="@ViewBag.effectiveTaxRate" />
+                @Html.TextBox("answer") <br /><br />
+                <input class="btn btn-success" type="submit" value="Check Answer" />
+            </div>
+        }
+
+        @using (Ajax.BeginForm("Answer", "Practice", new AjaxOptions
+        {
+            UpdateTargetId = "answerDiv",
+            InsertionMode = InsertionMode.ReplaceWith,
+            HttpMethod = "GET"
+        }))
+        {
+            <div id="netProfitMargin" class="collapse">
+                <p>What is the company's net profit margin? (Round answers to 2 decimal places)</p>
+                <br />
+                @Html.Hidden("divId", "netProfitMargin")
+                <input type="hidden" name="correctAnswer" value="@ViewBag.netProfitMargin" />
+                @Html.TextBox("answer") <br /><br />
+                <input class="btn btn-success" type="submit" value="Check Answer" />
+            </div>
+        }
+
+        @using (Ajax.BeginForm("Answer", "Practice", new AjaxOptions
+        {
+            UpdateTargetId = "answerDiv",
+            InsertionMode = InsertionMode.ReplaceWith,
+            HttpMethod = "GET"
+        }))
+        {
+            <div id="priceToEarnings" class="collapse">
+                <p>What is the company's net profit margin? (Round answers to 2 decimal places)</p>
+                <br />
+                @Html.Hidden("divId", "priceToEarnings")
+                <input type="hidden" name="correctAnswer" value="@ViewBag.priceToEarnings" />
+                <p>Stock Price: @ViewBag.stockPrice</p>
+                @Html.TextBox("answer") <br /><br />
+                <input class="btn btn-success" type="submit" value="Check Answer" />
+            </div>
+        }
+
+        @using (Ajax.BeginForm("Answer", "Practice", new AjaxOptions
+        {
+            UpdateTargetId = "answerDiv",
+            InsertionMode = InsertionMode.ReplaceWith,
+            HttpMethod = "GET"
+        }))
+        {
+            <div id="timesInterestEarned" class="collapse">
+                <p>What is the company's net profit margin? (Round answers to 2 decimal places)</p>
+                <br />
+                @Html.Hidden("divId", "timesInterestEarned")
+                <input type="hidden" name="correctAnswer" value="@ViewBag.timesInterestEarned" />
+                @Html.TextBox("answer") <br /><br />
+                <input class="btn btn-success" type="submit" value="Check Answer" />
+            </div>
+        }
+
+        @using (Ajax.BeginForm("Answer", "Practice", new AjaxOptions
+        {
+            UpdateTargetId = "answerDiv",
+            InsertionMode = InsertionMode.ReplaceWith,
+            HttpMethod = "GET"
+        }))
+        {
+            <div id="dividendYield" class="collapse">
+                <p>What is the company's dividend yield? (Round answers to 2 decimal places)</p>
+                <br />
+                @Html.Hidden("divId", "dividendYield")
+                <input type="hidden" name="correctAnswer" value="@ViewBag.dividendYield" />
+                <p>Stock Dividend: @ViewBag.stockDividend</p><br />
+                <p>Stock Price: @ViewBag.stockPrice</p>
+                @Html.TextBox("answer") <br /><br />
+                <input class="btn btn-success" type="submit" value="Check Answer" />
+            </div>
+        }
+        <br />
+        <div id="answerDiv"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}
+

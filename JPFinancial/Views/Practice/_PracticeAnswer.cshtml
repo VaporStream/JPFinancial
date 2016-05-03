@@ -1,0 +1,77 @@
+﻿@****** Panel Format ******@
+
+<div class="panel panel-primary" id="answerPanel">
+    <div class="panel-heading">
+        <h3 class="panel-title">@ViewBag.answer</h3>
+    </div>
+    <div class="panel-body">
+        @if (ViewBag.divId == "eps")
+        {
+            <p>Earnings per share (EPS) is the portion of a company's profit allocated to each outstanding share of common stock.</p>
+        }
+        else if (ViewBag.divId == "grossProfitMargin")
+        {
+            <p>
+                Gross profit margin is a financial metric used to assess a firm's financial health by revealing the proportion
+                of money left over from revenues after accounting for the cost of goods sold.
+            </p>
+        }
+        else if (ViewBag.divId == "operatingProfitMargin")
+        {
+            <p>Operating margin is a margin ratio used to measure a company's pricing strategy and operating efficiency.</p>
+        }
+        else if (ViewBag.divId == "effectiveTaxRate")
+        {
+            <p>The effective tax rate is the average rate at which an individual or corporation is taxed.</p>
+        }
+        else if (ViewBag.divId == "netProfitMargin")
+        {
+            <p>
+                Net margin is the ratio of net profits to revenues for a company or business segment that shows how much of
+                each dollar earned by the company is translated into profits.
+            </p>
+        }
+        else if (ViewBag.divId == "priceToEarnings")
+        {
+            <p>Price to earnings (P/E) is short for the ratio of a company's share price to its per-share earnings.</p>
+        }
+        else if (ViewBag.divId == "timesInterestEarned")
+        {
+            <p>Times interest earned (TIE) is a metric used to measure a company's ability to meet its debt obligations.</p>
+        }
+        else if (ViewBag.divId == "dividendYield")
+        {
+            <p>The dividend yield is a ratio that indicates how much a company pays out in dividends each year relative to its share price.</p>
+        }
+
+        @if (ViewBag.answer == "That is correct!")
+        {
+            <button class="btn btn-default btn-md">@Html.ActionLink("Close", "Income", "Practice")</button>
+        }
+        else
+        {
+            <button class="btn btn-default btn-md">@Html.ActionLink("Try Again", "Income", "Practice")</button>
+        }
+    </div>
+</div>
+
+
+
+@****** Modal Format ******@
+@*<div class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <p>One fine body…</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>*@
