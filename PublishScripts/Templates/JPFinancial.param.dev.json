@@ -1,0 +1,32 @@
+{
+  "siteName": {
+    "value": "jpfinancial"
+  },
+  "hostingPlanName": {
+    "value": "jpfinancialserviceplan"
+  },
+  "siteLocation": {
+    "value": "South Central US"
+  },
+  "sku": {
+    "value": "Free"
+  },
+  "workerSize": {
+    "value": "0"
+  },
+  "serverName": {
+    "value": "jpfinancial"
+  },
+  "serverLocation": {
+    "value": "South Central US"
+  },
+  "administratorLogin": {
+    "value": "pars6441"
+  },
+  "administratorLoginPassword": {
+    "value": "F1nancial1nfoecon"
+  },
+  "databaseName": {
+    "value": "jpfinancial_db"
+  }
+}

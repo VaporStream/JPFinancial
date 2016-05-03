@@ -7,6 +7,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JPFinancial", "JPFinancial\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JPFinancial.Tests", "JPFinancial.Tests\JPFinancial.Tests.csproj", "{78FCFA50-6403-4B1B-A04E-E387B89A3CE9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{72F233A0-DADC-4898-BB46-1768E226016F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{D85AFC92-A7B3-4C46-ABDA-2138E225AB2A}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{F579CE05-B83B-42C6-9CF5-4DF609CDA7D4}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\JPFinancial.json = PublishScripts\Templates\JPFinancial.json
+		PublishScripts\Templates\JPFinancial.param.dev.json = PublishScripts\Templates\JPFinancial.param.dev.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +37,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D85AFC92-A7B3-4C46-ABDA-2138E225AB2A} = {72F233A0-DADC-4898-BB46-1768E226016F}
+		{F579CE05-B83B-42C6-9CF5-4DF609CDA7D4} = {72F233A0-DADC-4898-BB46-1768E226016F}
 	EndGlobalSection
 EndGlobal
