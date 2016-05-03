@@ -1,0 +1,237 @@
+﻿@model JPFinancial.Web.Models.StockInfo
+
+@{
+    ViewBag.Title = "StockInfo";
+}
+
+<h2>@Html.DisplayFor(Model => Model.Company.Name)</h2>
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(Model => Model.Company.Ticker)
+    </dt>
+    <dd>
+        @Html.DisplayFor(Model => Model.Company.Ticker)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(Model => Model.Company.Sector)
+    </dt>
+    <dd>
+        @Html.DisplayFor(Model => Model.Company.Sector.Name)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(Model => Model.Company.Industry)
+    </dt>
+    <dd>
+        @Html.DisplayFor(Model => Model.Company.Industry.Name)
+    </dd>
+</dl>
+
+@****** Table Format ******@
+<table class="table table-striped table-hover ">
+    <thead>
+        <tr>
+            <th colspan="2">@Html.DisplayNameFor(model => model.Date)</th>
+            <th>@Html.DisplayNameFor(model => model.Price)</th>
+            <th>@Html.DisplayNameFor(model => model.OpenPrice)</th>
+            <th>@Html.DisplayNameFor(model => model.High)</th>
+            <th>@Html.DisplayNameFor(model => model.Low)</th>
+            <th>@Html.DisplayNameFor(model => model.CloseYest)</th>
+            <th>@Html.DisplayNameFor(model => model.Volume)</th>
+            <th>@Html.DisplayNameFor(model => model.AverageVolume)</th>
+            <th>@Html.DisplayNameFor(model => model.MarketCap)</th>
+            <th>@Html.DisplayNameFor(model => model.PE)</th>
+            <th>@Html.DisplayNameFor(model => model.EPS)</th>
+            <th>@Html.DisplayNameFor(model => model.High52)</th>
+            <th>@Html.DisplayNameFor(model => model.Low52)</th>
+            @*<th>@Html.DisplayNameFor(model => model.Change)</th>
+                <th>@Html.DisplayNameFor(model => model.ChangePct)</th>*@
+            <th>@Html.DisplayNameFor(model => model.Beta)</th>
+            <th>@Html.DisplayNameFor(model => model.Shares)</th>
+            @*<th>@Html.DisplayNameFor(model => model.Currency)</th>*@
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2">@Html.DisplayFor(model => model.Date)</td>
+            <td>@Html.DisplayFor(model => model.Price)</td>
+            <td>@Html.DisplayFor(model => model.OpenPrice)</td>
+            <td>@Html.DisplayFor(model => model.High)</td>
+            <td>@Html.DisplayFor(model => model.Low)</td>
+            <td>@Html.DisplayFor(model => model.CloseYest)</td>
+            <td>@Html.DisplayFor(model => model.Volume)</td>
+            <td>@Html.DisplayFor(model => model.AverageVolume)</td>
+            <td>@Html.DisplayFor(model => model.MarketCap)</td>
+            <td>@Html.DisplayFor(model => model.PE)</td>
+            <td>@Html.DisplayFor(model => model.EPS)</td>
+            <td>@Html.DisplayFor(model => model.High52)</td>
+            <td>@Html.DisplayFor(model => model.Low52)</td>
+            @*<td>@Html.DisplayFor(model => model.Change)</td>
+                <td>@Html.DisplayFor(model => model.ChangePct)</td>*@
+            <td>@Html.DisplayFor(model => model.Beta)</td>
+            <td>@Html.DisplayFor(model => model.Shares)</td>
+            @*<td>@Html.DisplayFor(model => model.Currency)</td>*@
+        </tr>
+    </tbody>
+</table>
+
+@****** Description List Format ******@
+
+@*<div>
+        <h4>@Html.ViewBag.Name</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StockPrice)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StockPrice)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OpenPrice)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OpenPrice)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.High)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.High)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Low)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Low)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Volume)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Volume)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MarketCap)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MarketCap)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.VolumeAvg)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.VolumeAvg)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PE)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PE)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EPS)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EPS)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.High52)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.High52)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Low52)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Low52)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Change)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Change)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Beta)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Beta)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ChangePct)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ChangePct)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CloseYest)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CloseYest)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Shares)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Shares)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Currency)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Currency)
+            </dd>
+
+        </dl>
+    </div>*@
+
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { companyId = Model.ID }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+
