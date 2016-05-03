@@ -16,10 +16,11 @@ namespace JPFinancial.Web.Models
             Industries = new HashSet<Industry>();
         }
 
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(25)]
+        [Display(Name = "Sector")]
         public string Name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

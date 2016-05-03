@@ -1,15 +1,12 @@
 namespace JPFinancial.Web.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<JPFinancial.Web.Models.JPFinancialContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Models.JPFinancialContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(JPFinancial.Web.Models.JPFinancialContext context)

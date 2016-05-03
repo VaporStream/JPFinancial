@@ -15,13 +15,14 @@ namespace JPFinancial.Web.Models
             Companies = new HashSet<Company>();
         }
 
-        public int ID { get; set; }
+        public int Id { get; set; }
+
+        public int SectorId { get; set; }
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "Industry")]
         public string Name { get; set; }
-
-        public int SectorID { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Company> Companies { get; set; }

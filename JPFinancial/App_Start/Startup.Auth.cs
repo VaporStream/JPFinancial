@@ -54,15 +54,15 @@ namespace JPFinancial
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "1711969592391122",
+               appSecret: "50734e9da93b019a5f474c689c1ccce6");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "574875334465-8j9039p3652mggmp0pf51h4j16qcdj3c.apps.googleusercontent.com",
+                ClientSecret = "UIseb3DEXp6xoq0iEExZBiOX"
+            });
         }
     }
 }

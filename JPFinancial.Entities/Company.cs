@@ -15,7 +15,7 @@ namespace JPFinancial.Web.Models
             StockInfoes = new HashSet<StockInfo>();
         }
 
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(75)]
@@ -25,27 +25,9 @@ namespace JPFinancial.Web.Models
         [StringLength(10)]
         public string Ticker { get; set; }
 
-        [StringLength(50)]
-        public string Address { get; set; }
+        public int SectorId { get; set; }
 
-        [StringLength(50)]
-        public string City { get; set; }
-
-        [StringLength(2)]
-        public string State { get; set; }
-
-        [StringLength(10)]
-        public string Zipcode { get; set; }
-
-        [StringLength(20)]
-        public string Phone { get; set; }
-
-        [StringLength(50)]
-        public string Email { get; set; }
-
-        public int SectorID { get; set; }
-
-        public int IndustryID { get; set; }
+        public int IndustryId { get; set; }
 
         public virtual Industry Industry { get; set; }
 

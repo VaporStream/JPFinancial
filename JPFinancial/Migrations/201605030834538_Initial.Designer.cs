@@ -13,7 +13,7 @@ namespace JPFinancial.Web.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201605030451420_Initial"; }
+            get { return "201605030834538_Initial"; }
         }
         
         string IMigrationMetadata.Source

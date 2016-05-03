@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using JPFinancial.Web.Models;
 using PagedList;
-using PagedList.Mvc;
 
 namespace JPFinancial.Web.Controllers
 {
@@ -72,7 +68,7 @@ namespace JPFinancial.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ID,Name,Ticker,Address,City,State,Zipcode,Phone,Email,SectorID,IndustryID")] Company company)
+        public async Task<ActionResult> Create([Bind(Include = "ID,Name,Ticker,SectorID,IndustryID")] Company company)
         {
             if (ModelState.IsValid)
             {
@@ -81,8 +77,8 @@ namespace JPFinancial.Web.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IndustryID = new SelectList(db.Industries, "ID", "Name", company.IndustryID);
-            ViewBag.SectorID = new SelectList(db.Sectors, "ID", "Name", company.SectorID);
+            ViewBag.IndustryID = new SelectList(db.Industries, "ID", "Name", company.IndustryId);
+            ViewBag.SectorID = new SelectList(db.Sectors, "ID", "Name", company.SectorId);
             return View(company);
         }
 
@@ -98,8 +94,8 @@ namespace JPFinancial.Web.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.IndustryID = new SelectList(db.Industries, "ID", "Name", company.IndustryID);
-            ViewBag.SectorID = new SelectList(db.Sectors, "ID", "Name", company.SectorID);
+            ViewBag.IndustryID = new SelectList(db.Industries, "ID", "Name", company.IndustryId);
+            ViewBag.SectorID = new SelectList(db.Sectors, "ID", "Name", company.SectorId);
             return View(company);
         }
 
@@ -108,7 +104,7 @@ namespace JPFinancial.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ID,Name,Ticker,Address,City,State,Zipcode,Phone,Email,SectorID,IndustryID")] Company company)
+        public async Task<ActionResult> Edit([Bind(Include = "ID,Name,Ticker,SectorID,IndustryID")] Company company)
         {
             if (ModelState.IsValid)
             {
@@ -116,8 +112,8 @@ namespace JPFinancial.Web.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewBag.IndustryID = new SelectList(db.Industries, "ID", "Name", company.IndustryID);
-            ViewBag.SectorID = new SelectList(db.Sectors, "ID", "Name", company.SectorID);
+            ViewBag.IndustryID = new SelectList(db.Industries, "ID", "Name", company.IndustryId);
+            ViewBag.SectorID = new SelectList(db.Sectors, "ID", "Name", company.SectorId);
             return View(company);
         }
 
@@ -147,15 +143,15 @@ namespace JPFinancial.Web.Controllers
             return RedirectToAction("Index");
         }
 
-        public async Task<ActionResult> GetStockInfo(int? companyId)
+        public async Task<ActionResult> StockInfo(int? CompanyId)
         {
 
-            if (companyId == null)
+            if (CompanyId == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            StockInfo stock = await db.StockInfoes.FindAsync(companyId);
-            if (companyId == null)
+            StockInfo stock = await db.StockInfoes.FindAsync(CompanyId);
+            if (CompanyId == null)
             {
                 return HttpNotFound();
             }

@@ -1,9 +1,6 @@
 namespace JPFinancial.Web.Models
 {
-    using System;
     using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
 
     public partial class JPFinancialContext : DbContext
     {
@@ -12,22 +9,14 @@ namespace JPFinancial.Web.Models
         {
         }
 
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<Industry> Industries { get; set; }
         public virtual DbSet<Sector> Sectors { get; set; }
         public virtual DbSet<StockInfo> StockInfoes { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Company>()
-                .Property(e => e.State)
-                .IsFixedLength();
-
-            modelBuilder.Entity<Company>()
-                .Property(e => e.Zipcode)
-                .IsFixedLength();
-
             modelBuilder.Entity<Company>()
                 .HasMany(e => e.StockInfoes)
                 .WithRequired(e => e.Company)
@@ -78,7 +67,7 @@ namespace JPFinancial.Web.Models
 
             modelBuilder.Entity<StockInfo>()
                 .Property(e => e.MarketCap)
-                .HasPrecision(12, 0);
+                .HasPrecision(16, 0);
 
             modelBuilder.Entity<StockInfo>()
                 .Property(e => e.PE)
@@ -110,7 +99,7 @@ namespace JPFinancial.Web.Models
 
             modelBuilder.Entity<StockInfo>()
                 .Property(e => e.Shares)
-                .HasPrecision(12, 0);
+                .HasPrecision(16, 0);
         }
     }
 }

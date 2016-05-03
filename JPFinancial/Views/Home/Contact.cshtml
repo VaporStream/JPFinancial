@@ -1,17 +1,53 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+@*<h2>@ViewBag.Title.</h2>*@
+@*<h3>@ViewBag.Message</h3>*@
+
+<div class="col-md-12">
+    <div class="col-md-6">
+        <h3>Contact Us</h3>
+        <br />
+        <form method="post" action="mailto:ryanp6441@gmail.com">
+            <div class="form-group">
+                <label for="nameInput">Name</label>
+                <input type="text" name="nameInput" class="form-control"
+                       placeholder="Adam Smith" />
+            </div>
+            <div class="form-group">
+                <label for="emailInput">Email</label>
+                <input type="email" name="emailInput" class="form-control"
+                       placeholder="adamsmith@wealthofnations.com" />
+            </div>
+            <div class="form-group">
+                <label>Reason</label>
+                <select class="form-control">
+                    <option>Comment</option>
+                    <option>Question</option>
+                    <option>Support</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea cols="40" rows="6" class="form-control"></textarea>
+            </div>
+            <button class="btn btn-primary btn-md" type="submit" value="Submit">Submit<span class="glyphicon glyphicon-send"></span></button>
+            <br />
+            <br />
+            <br />
+            <br />
+        </form>
+    </div>
+</div>
 
 <address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
+    <br />
+    <br />
+    Littleton, CO 80123<br />
     <abbr title="Phone">P:</abbr>
-    425.555.0100
+    720.372.0375
 </address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+@*<address>
+        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    </address>*@
